@@ -7,9 +7,17 @@
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": [
-    "Other"
-  ],
+  "categories": ["Other"],
+  "keywords": ["regex", "outline", "log", "navigation", "explorer"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rytakao/regex-outline.git"
+  },
+  "homepage": "https://github.com/rytakao/regex-outline",
+  "bugs": {
+    "url": "https://github.com/rytakao/regex-outline/issues"
+  },
+  "icon": "images/icon.png",
   "activationEvents": [
     "onStartupFinished",
     "onLanguage:plaintext"
@@ -27,7 +35,7 @@
       "properties": {
         "regexOutline.pattern": {
           "type": "string",
-          "default": "^.*#show\\s.+|--- show\\s.+---",
+          "default": "ERROR|WARN|INFO",
           "description": "Regex pattern to extract symbols from documents"
         },
         "regexOutline.directory": {
@@ -54,6 +62,5 @@
   "devDependencies": {
     "@types/vscode": "^1.85.0",
     "typescript": "^5.3.0"
-  },
-  "icon": "images/icon.png"
+  }
 }
