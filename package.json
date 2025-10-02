@@ -1,0 +1,59 @@
+{
+  "name": "regex-outline",
+  "displayName": "Regex Outline",
+  "description": "Show an outline view based on regex matches in the document",
+  "version": "0.0.2",
+  "publisher": "rytakao",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onLanguage:plaintext"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "regexOutline.refresh",
+        "title": "Regex Outline: Refresh"
+      }
+    ],
+    "configuration": {
+      "title": "Regex Outline",
+      "properties": {
+        "regexOutline.pattern": {
+          "type": "string",
+          "default": "^.*#show\\s.+|--- show\\s.+---",
+          "description": "Regex pattern to extract symbols from documents"
+        },
+        "regexOutline.directory": {
+          "type": "string",
+          "default": "",
+          "description": "Apply only to files under this directory (absolute or relative to workspace root)"
+        }
+      }
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "regexOutlineView",
+          "name": "Regex Outline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "echo \"No tests yet\""
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  },
+  "icon": "images/icon.png"
+}
